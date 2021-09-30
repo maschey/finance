@@ -38,8 +38,8 @@ while i < 10:
 
 # convert timestamp string to datetime and convert datetime-timestamp to localtime in BERLIN/AMSTERDAM
 # (i hope -0500 is right but honestly i don't know exactly)
-datetimeObj = datetime.strptime(btcResponse[0]['date'] + ' -0500', '%Y-%m-%d %H:%M:%S %z')
-time_of_update = arrow.get(datetimeObj).to('Europe/Berlin').format().split(' ')[1].split('+')[0]
+datetimeObj = datetime.now()
+time_of_update = datetimeObj.strftime("%H:%M:%S")
 
 # set sizes, because motherfucking teamspeak can handle only 300x300px, later on dpi is set to 70, for geniuses 70*5=300
 figure = plt.gcf()
