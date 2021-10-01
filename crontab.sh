@@ -1,5 +1,5 @@
 #!/bin/bash
 rm -f /root/gespeichertesdiagramm.png
-python3  /root/finance/main.py
+/usr/bin/python3.8  /root/finance/main.py
 sleep 30
 exit
