@@ -2,4 +2,4 @@
 cd "$(/root/finance "$0")";
 CWD="$(pwd)"
 echo $CWD
-python3 main.py
+python3 /root/finance/main.py
