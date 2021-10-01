@@ -1,8 +1,9 @@
+#!/usr/bin/python3
+
 import matplotlib.pyplot as plt
 import requests
 import os
 from datetime import datetime
-import arrow
 
 apikey = os.environ['apikey']
 # get bitcoin Data in 15min steps
