@@ -2,10 +2,12 @@
 
 import matplotlib.pyplot as plt
 import requests
-import os
 from datetime import datetime
 
-apikey = os.environ['apikey']
+f = open("/root/finance/apikey.txt", "r")
+apikey = f.readline()
+f.close()
+
 # get bitcoin Data in 15min steps
 btc = requests.get(
     'https://financialmodelingprep.com/api/v3/historical-chart/15min/BTCUSD?apikey=' + apikey)
