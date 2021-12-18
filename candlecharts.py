@@ -8,8 +8,12 @@ import pandas as pd
 btc = requests.get(
     'https://financialmodelingprep.com/api/v3/historical-chart/15min/BTCUSD?apikey=')
 df = pd.DataFrame.from_dict(btc.json())
-dfs = df[:10]
+dfs = df.iloc[0:10]
 
+dfs['date'] = pd.to_datetime(dfs['date'])
+dfs.date = dfs.date.dt.tz_localize('EST').dt.tz_convert('Europe/Berlin')
+
+print(dfs)
 eurUSD = requests.get(
     'https://financialmodelingprep.com/api/v3/quote/EURUSD?apikey=')
 eurUSDResponse = eurUSD.json()
