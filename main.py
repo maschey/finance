@@ -1,21 +1,17 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.8
 
 import matplotlib.pyplot as plt
 import requests
 from datetime import datetime
 
-f = open("/root/finance/apikey.txt", "r")
-apikey = f.readline()
-f.close()
-
 # get bitcoin Data in 15min steps
 btc = requests.get(
-    'https://financialmodelingprep.com/api/v3/historical-chart/15min/BTCUSD?apikey=' + apikey)
+    'https://financialmodelingprep.com/api/v3/historical-chart/15min/BTCUSD?apikey=')
 btcResponse = btc.json()
 
 # get live EUR/USD ratio
 eurUSD = requests.get(
-    'https://financialmodelingprep.com/api/v3/quote/EURUSD?apikey=' + apikey)
+    'https://financialmodelingprep.com/api/v3/quote/EURUSD?apikey=')
 eurUSDResponse = eurUSD.json()
 
 # time beam (Does Zeitstrahl mean time beam in english? idk)
